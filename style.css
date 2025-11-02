@@ -4,8 +4,56 @@
     box-sizing: border-box;
 }
 
-
-.large-display img[src*="profile"], .small-display img[src*="profile"] {
-    border-radius: 50%;
-    object-fit: contain;
+:root {
+    --main-background: rgb(117, 181, 224);
+    --largest-font: clamp(40px, 1rem + 0.5vw, 50px);
+    --medium-font: clamp(20px, 0.8rem + 0.3vw, 40px)
 }
+
+.large-display img[src*="profile"], .small-display img[src*="profile"], .trending-user img, .title img {
+    border-radius: 50%;
+}
+
+.flex {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/*GRID LAYOUT SECTION*/
+
+/*SIDEBAR SECTION*/
+.sidebar {
+    background-color: var(--main-background);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;;
+    min-height: 500px;
+}
+
+.title h1 {
+    font-size: var(--largest-font);
+}
+
+.main-links, .other-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.link {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: 200ms ease-in;
+}
+
+.link h2 {
+    font-size: var(--medium-font);
+}
+
+.link:hover {
+    background-color: white;
+}
+
