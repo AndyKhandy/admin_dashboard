@@ -1,0 +1,11 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+.large-display img[src*="profile"], .small-display img[src*="profile"] {
+    border-radius: 50%;
+    object-fit: contain;
+}
