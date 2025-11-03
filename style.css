@@ -5,20 +5,31 @@
 }
 
 :root {
-    --main-background: rgb(117, 181, 224);
-    --largest-font: clamp(40px, 1rem + 0.5vw, 50px);
-    --medium-font: clamp(20px, 0.8rem + 0.3vw, 40px)
+    --main-background: rgb(109, 175, 219);
+    --largest-font: clamp(30px, 1rem + 0.5vw, 50px);
+    --medium-font: clamp(20px, 0.8rem + 0.3vw, 40px);
+    --gap-size: 15px;
 }
 
 .large-display img[src*="profile"], .small-display img[src*="profile"], .trending-user img, .title img {
     border-radius: 50%;
 }
 
+h1 {
+    font-size: var(--largest-font);
+}
+
+.link h2, .small-display h2 {
+    font-size: var(--medium-font);
+    font-weight: bolder;
+}
+
 .flex {
     display: flex;
-    gap: 15px;
+    gap: var(--gap-size, 15px);
     align-items: center;
 }
+
 
 /*GRID LAYOUT SECTION*/
 
@@ -47,13 +58,75 @@
     padding: 10px 20px;
     border-radius: 10px;
     transition: 200ms ease-in;
-}
-
-.link h2 {
-    font-size: var(--medium-font);
+    cursor: pointer;
 }
 
 .link:hover {
     background-color: white;
 }
+/*SIDEBAR SECTION END*/
+
+/*HEADER SECTION*/
+.search {
+    --gap-size: 5px;
+    align-items: center;
+}
+
+.search input{
+    background-color: rgba(233, 230, 230, 0.801);
+    width: 100%;
+    border:none;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.search input:focus {
+    outline: 4px double var(--main-background);
+}
+
+.small-display {
+    --gap-size: 15px;
+}
+
+.large-display p {
+    font-weight: bold;
+}
+
+.buttons button {
+    padding: 8px 20px;
+    border-radius: 20px;
+    border:none;
+    color: white;
+    background-color: var(--main-background);
+}
+
+.buttons button:hover {
+    transform: scale(1.1);
+}
+/*HEADER SECTION END*/
+
+/*PROJECT SECTION*/
+.project-card {
+    height: 200px;
+    border-left: 10px solid rgb(224, 179, 28);
+    border-radius: 10px;
+    padding: 20px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.project-card .text {
+    max-width: 70%;
+}
+
+.project-card .icons {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    display: flex;
+    gap: 15px;
+}
+
+
 
