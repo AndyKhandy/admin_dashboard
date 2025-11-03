@@ -5,10 +5,11 @@
 }
 
 :root {
-    --main-background: rgb(109, 175, 219);
+    --main-background: rgb(128, 187, 197);
     --largest-font: clamp(30px, 1rem + 0.5vw, 50px);
     --medium-font: clamp(20px, 0.8rem + 0.3vw, 40px);
     --gap-size: 15px;
+    --border-radius: 10px;
 }
 
 .large-display img[src*="profile"], .small-display img[src*="profile"], .trending-user img, .title img {
@@ -19,7 +20,7 @@ h1 {
     font-size: var(--largest-font);
 }
 
-.link h2, .small-display h2 {
+.link h2, .small-display h2, .titles, .announce p:first-of-type{
     font-size: var(--medium-font);
     font-weight: bolder;
 }
@@ -47,6 +48,10 @@ h1 {
     font-size: var(--largest-font);
 }
 
+.link h2, h1 {
+    color: white;
+}
+
 .main-links, .other-links {
     flex-direction: column;
     align-items: flex-start;
@@ -56,14 +61,15 @@ h1 {
 .link {
     width: 100%;
     padding: 10px 20px;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     transition: 200ms ease-in;
     cursor: pointer;
 }
 
 .link:hover {
-    background-color: white;
+    background-color: rgba(56, 137, 161, 0.719);
 }
+
 /*SIDEBAR SECTION END*/
 
 /*HEADER SECTION*/
@@ -109,7 +115,7 @@ h1 {
 .project-card {
     height: 200px;
     border-left: 10px solid rgb(224, 179, 28);
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     padding: 20px;
     margin-left: 10px;
     margin-bottom: 10px;
@@ -127,6 +133,39 @@ h1 {
     display: flex;
     gap: 15px;
 }
+/*PROJECT SECTION END*/
 
+/*ANNOUNCEMENT SECTION*/
+.announce-box {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    border-radius: var(--border-radius);
+}
+.announce {
+    max-width: 70%;
+    padding: 5px;
+    border-bottom: 2px solid grey;
+}
 
+.announce:last-of-type {
+    border-bottom: none;
+}
+/*ANNOUNCEMENT SECTION END*/
 
+/*TRENDING SECTION*/
+
+.trending-box {
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#username {
+    font-weight: bolder;
+    margin-bottom: 3px;
+}
+
+#descript {
+    opacity: 0.8;
+}
