@@ -10,7 +10,7 @@
     --medium-font: clamp(10px, 0.8rem + 0.5vw, 40px);
     --gap-size: 15px;
     --border-radius: 10px;
-    --min-project: 30%;
+    --min-project: 35%;
 }
 
 .large-display img[src*="profile"], .small-display img[src*="profile"], .trending-user img, .title img {
@@ -59,79 +59,6 @@ body {
     "side";
 }
 
-@media screen and (max-width: 650px)
-{
-    .header{
-        display: block;
-    }
-}
-
-@media screen and (max-width: 990px){
-    .large-display {
-        grid-area: 1 / 1 / 1 / 1;
-    }
-
-    .small-display {
-        grid-area: 1 / 2 / 1 / 2;
-    }
-
-
-
-}
-
-@media screen and (min-width: 850px)
-
-{
-    .container {
-        grid-template-areas:
-        "head head head"
-        "project project trend"
-        "project project side"
-        "project project side"
-        "project project announce";
-    }
-
-    .header{
-        grid-template-rows: 1fr 1.5fr;
-    }
-
-    .buttons button {
-        padding: 15px 30px;
-    }
-
-}
-
-@media screen and (min-width: 1400px)
-{
-
-    .projects .projects-grid{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(var(--min-project),1fr));
-    }
-
-    .container{
-        grid-template-areas:
-        "side head head head head"
-        "side project project project announce"
-        "side project project project announce"
-        "side project project project trend"
-        "side project project project trend";
-    }
-}
-
-@media screen and (min-width: 2000px)
-{
-    :root{
-        --min-project: 40%;
-    }
-
-    .project-card{
-        height: 300px;
-    }
-    
-}
-
-
 .sidebar{
         grid-area: side;
 }
@@ -142,8 +69,9 @@ body {
     grid-area: head;
     display: grid;
     grid-template-columns: 1.5fr 1fr;
-    grid-template-rows: 2fr 3fr;
-    background-color: white;
+    background-color:white;
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2), 6px 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 10px;
 }
 
 .projects {
@@ -255,7 +183,7 @@ body {
 }
 
 .project-card {
-    height: 250px;
+    height: 200px;
     border-left: 10px solid rgb(224, 179, 28);
     border-radius: var(--border-radius);
     padding: 20px;
@@ -288,7 +216,7 @@ body {
 }
 .announce {
     max-width: 70%;
-    padding: 5px;
+    padding: 20px 0px;
     border-bottom: 2px solid grey;
 }
 
@@ -304,6 +232,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     border-radius: var(--border-radius);
+
 }
 
 #username {
@@ -315,3 +244,62 @@ body {
     opacity: 0.8;
 }
 /*TRENDING SECTION END*/
+
+@media screen and (max-width: 990px){
+    .large-display {
+        grid-area: 1 / 1 / 1 / 1;
+    }
+
+    .small-display {
+        grid-area: 1 / 2 / 1 / 2;
+    }
+}
+
+@media screen and (min-width: 850px)
+
+{
+    .container {
+        grid-template-areas:
+        "head head head"
+        "project project trend"
+        "project project side"
+        "project project side"
+        "project project announce";
+    }
+
+    .buttons button {
+        padding: 15px 30px;
+    }
+
+}
+
+@media screen and (min-width: 1400px)
+{
+
+    .header{
+        grid-template-rows: 1fr 1.5fr;
+    }
+
+    .projects .projects-grid{
+        display: grid;
+        gap: 15px;
+        grid-template-columns: repeat(auto-fit, minmax(var(--min-project),1fr));
+    }
+
+    .container{
+        grid-template-columns: repeat(5,1fr);
+        grid-template-areas:
+        "side head head head head"
+        "side project project project announce"
+        "side project project project trend";
+
+    }
+}
+
+@media screen and (min-width: 2000px)
+{    
+    .project-card {
+        height:250px;
+    }
+    
+}
