@@ -75,9 +75,12 @@ body {
         grid-area: 1 / 2 / 1 / 2;
     }
 
+
+
 }
 
 @media screen and (min-width: 900px)
+
 {
     .container {
         grid-template-areas:
