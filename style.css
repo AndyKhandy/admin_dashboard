@@ -13,12 +13,17 @@
     --min-project: 35%;
 }
 
-.large-display img[src*="profile"], .small-display img[src*="profile"], .trending-user img, .title img {
+.large-display img[src*="profile"], .small-display img[src*="profile"], .trending-user img, .title img, .post img {
     border-radius: 50%;
 }
 
-h1, #name {
+h1, #name, #text {
     font-size: var(--largest-font);
+}
+
+hr {
+    height: 2px;
+    width: 100%;
 }
 
 .link h2, .small-display h2, .titles, .announce p:first-of-type{
@@ -54,7 +59,8 @@ body {
     grid-template-areas:
     "head"
     "trend"
-    "announce" 
+    "announce"
+    "post" 
     "project"
     "side";
 }
@@ -88,6 +94,12 @@ body {
     grid-area: trend;
     padding: 20px;
 }
+
+.post {
+    grid-area: post;
+    padding: 20px;
+}
+
 
 
 
@@ -245,6 +257,38 @@ body {
 }
 /*TRENDING SECTION END*/
 
+/*POST SECTION*/
+.post-box {
+    background-color:white;
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius:var(--border-radius);
+}
+
+.post-box p:last-of-type {
+    font-size: var(--medium-font);
+}
+
+.user-header{
+    width: 100%;
+    justify-content: space-between;
+}
+
+.friends-img {
+    gap:0px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+a{
+    color: var(--main-background);
+    text-decoration: none;
+}
+
+
 @media screen and (max-width: 990px){
     .large-display {
         grid-area: 1 / 1 / 1 / 1;
@@ -259,12 +303,13 @@ body {
 
 {
     .container {
+        align-items: center;
         grid-template-areas:
         "head head head"
-        "project project trend"
+        "post post trend"
+        "project project announce"
         "project project side"
-        "project project side"
-        "project project announce";
+        "project project side";
     }
 
     .buttons button {
@@ -287,11 +332,12 @@ body {
     }
 
     .container{
+        align-items: stretch;
         grid-template-columns: repeat(5,1fr);
         grid-template-areas:
         "side head head head head"
         "side project project project announce"
-        "side project project project trend";
+        "side post post post trend";
 
     }
 }
