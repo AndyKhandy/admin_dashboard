@@ -10,7 +10,7 @@
     --medium-font: clamp(10px, 0.8rem + 0.5vw, 40px);
     --gap-size: 15px;
     --border-radius: 10px;
-    --min-project: 330px;
+    --min-project: 400px;
 }
 
 .large-display img[src*="profile"], .small-display img[src*="profile"], .trending-user img, .title img {
@@ -53,9 +53,9 @@ body {
     display: grid;
     grid-template-areas:
     "head"
-    "project"
-    "announce" 
     "trend"
+    "announce" 
+    "project"
     "side";
 }
 
