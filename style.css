@@ -74,9 +74,11 @@ body {
         grid-area: 1 / 2 / 1 / 2;
     }
 
+
+
 }
 
-@media screen and (min-width: 1000px)
+@media screen and (min-width: 600px)
 {
     .container {
         grid-template-areas:
@@ -88,7 +90,7 @@ body {
     }
 
     .project-card {
-        max-height: 300px;
+        height: 400px;
     }
 
     .header{
@@ -101,13 +103,13 @@ body {
 
 }
 
-@media screen and (min-width: 1850px)
+@media screen and (min-width: 1200px)
 {
     
 
     .projects .projects-grid{
         display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(525px,1fr));
+        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
     }
 
     .container{
@@ -224,6 +226,7 @@ body {
 }
 
 .buttons button {
+    font-weight: bolder;
     padding: 10px 20px;
     border-radius: 20px;
     border:none;
@@ -238,7 +241,7 @@ body {
 
 /*PROJECT SECTION*/
 .project-card {
-    height: 350px;
+    height: 200px;
     border-left: 10px solid rgb(224, 179, 28);
     border-radius: var(--border-radius);
     padding: 20px;
@@ -248,12 +251,12 @@ body {
 }
 
 .project-card .text {
-    max-width: 70%;
+    max-width: 80%;
 }
 
 .project-card .icons {
     position: absolute;
-    bottom: 10%;
+    bottom: 8%;
     right: 10%;
     display: flex;
     gap: 15px;
