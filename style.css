@@ -247,12 +247,12 @@ body {
 
 }
 
-#username {
+.username {
     font-weight: bolder;
     margin-bottom: 3px;
 }
 
-#descript {
+.descript {
     opacity: 0.8;
 }
 /*TRENDING SECTION END*/
@@ -266,7 +266,8 @@ body {
     border-radius:var(--border-radius);
 }
 
-.post-box p:last-of-type {
+
+.post-box p:last-of-type, .username.large {
     font-size: var(--medium-font);
 }
 
